@@ -1,0 +1,215 @@
+{
+  "Action definition": {
+    "prefix": "action",
+    "body": [
+      "action ${1:name}(${2:params}) {",
+      "\t${3:body}",
+      "}"
+    ],
+    "description": "Define a new action (function)"
+  },
+  "Action with return type": {
+    "prefix": "actionr",
+    "body": [
+      "action ${1:name}(${2:params}) -> ${3:type} {",
+      "\t${4:body}",
+      "}"
+    ],
+    "description": "Define a new action with return type"
+  },
+  "Class definition": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Define a new class"
+  },
+  "Class with protocol adoption": {
+    "prefix": "class-adopt",
+    "body": [
+      "class ${1:ClassName} adopt ${2:ProtocolName} {",
+      "\t${3:body}",
+      "}"
+    ],
+    "description": "Define a new class adopting a protocol"
+  },
+  "Protocol definition": {
+    "prefix": "protocol",
+    "body": [
+      "protocol ${1:ProtocolName} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Define a new protocol"
+  },
+  "When otherwise block": {
+    "prefix": "when",
+    "body": [
+      "when ${1:condition} {",
+      "\t${2:body}",
+      "} otherwise {",
+      "\t${3:body}",
+      "}"
+    ],
+    "description": "Conditional when/otherwise block"
+  },
+  "When only": {
+    "prefix": "when-only",
+    "body": [
+      "when ${1:condition} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Conditional when block without otherwise"
+  },
+  "Switch case block": {
+    "prefix": "switch",
+    "body": [
+      "switch ${1:value} {",
+      "\tcase ${2:pattern1} {",
+      "\t\t${3:body}",
+      "\t}",
+      "\tcase ${4:pattern2} {",
+      "\t\t${5:body}",
+      "\t}",
+      "\tdefault {",
+      "\t\t${6:body}",
+      "\t}",
+      "}"
+    ],
+    "description": "Switch/case block with default"
+  },
+  "Switch case (minimal)": {
+    "prefix": "switch-min",
+    "body": [
+      "switch ${1:value} {",
+      "\tcase ${2:pattern} {",
+      "\t\t${3:body}",
+      "\t}",
+      "\tdefault {",
+      "\t\t${4:body}",
+      "\t}",
+      "}"
+    ],
+    "description": "Minimal switch/case block"
+  },
+  "Try catch block": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t${1:body}",
+      "} catch ${2:error} {",
+      "\t${3:body}",
+      "}"
+    ],
+    "description": "Try/catch error handling block"
+  },
+  "Test block": {
+    "prefix": "test",
+    "body": [
+      "test \"${1:description}\" {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Define a test block"
+  },
+  "Test with assert": {
+    "prefix": "test-assert",
+    "body": [
+      "test \"${1:description}\" {",
+      "\tassert ${2:condition}",
+      "}"
+    ],
+    "description": "Define a test block with assertion"
+  },
+  "Assert statement": {
+    "prefix": "assert",
+    "body": ["assert ${1:condition}"],
+    "description": "Assert a condition is true"
+  },
+  "Hook before": {
+    "prefix": "hook-before",
+    "body": [
+      "hook before ${1:eventName} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Hook that runs before an event"
+  },
+  "Hook after": {
+    "prefix": "hook-after",
+    "body": [
+      "hook after ${1:eventName} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Hook that runs after an event"
+  },
+  "Extend class": {
+    "prefix": "extend",
+    "body": [
+      "extend ${1:ClassName} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Extend an existing class with new methods"
+  },
+  "Computed property": {
+    "prefix": "computed",
+    "body": [
+      "computed ${1:propertyName} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "Define a computed property"
+  },
+  "While loop": {
+    "prefix": "wloop",
+    "body": [
+      "wloop ${1:condition} {",
+      "\t${2:body}",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "For loop": {
+    "prefix": "floop",
+    "body": [
+      "floop ${1:var} in ${2:collection} {",
+      "\t${3:body}",
+      "}"
+    ],
+    "description": "For-each loop"
+  },
+  "For loop (range)": {
+    "prefix": "floop-range",
+    "body": [
+      "floop ${1:i} = ${2:0} to ${3:10} {",
+      "\t${4:body}",
+      "}"
+    ],
+    "description": "For loop with range"
+  },
+  "Map function": {
+    "prefix": "map",
+    "body": ["${1:collection}.map(action(${2:x}) { ${3:body} })"],
+    "description": "Map over a collection"
+  },
+  "Filter function": {
+    "prefix": "filter",
+    "body": ["${1:collection}.filter(action(${2:x}) { ${3:condition} })"],
+    "description": "Filter a collection"
+  },
+  "Reduce function": {
+    "prefix": "reduce",
+    "body": ["${1:collection}.reduce(action(${2:acc}, ${3:x}) { ${4:body} }, ${5:initial})"],
+    "description": "Reduce a collection"
+  },
+  "Adopt protocol": {
+    "prefix": "adopt",
+    "body": ["adopt ${1:ProtocolName}"],
+    "description": "Adopt a protocol"
+  }
+}
